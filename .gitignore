@@ -21,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/MisionTIC-Ciclo2/nbproject/private/
+/MisionTIC-Ciclo2/build/
+/MisionTIC-Ciclo2/dist/
+/misionTIC-ciclo2/nbproject/private/
