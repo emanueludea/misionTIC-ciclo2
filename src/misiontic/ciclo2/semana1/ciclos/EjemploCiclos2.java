@@ -26,5 +26,6 @@ public class EjemploCiclos2 {
                  break;  
             System.out.println(j);
         }
+        // System.out.println("" + j); // j no existe afuera del ciclo for
     }
 }

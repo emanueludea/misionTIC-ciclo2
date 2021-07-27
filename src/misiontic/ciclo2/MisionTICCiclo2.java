@@ -5,8 +5,8 @@
  */
 package misiontic.ciclo2;
 
-import misiontic.ciclo2.semana2.Circle;
-import misiontic.ciclo2.semana2.Rectangle;
+import misiontic.ciclo2.semana2.herencia.Circulo;
+import misiontic.ciclo2.semana2.herencia.Rectangulo;
 
 /**
  *
@@ -19,20 +19,20 @@ public class MisionTICCiclo2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Rectangle rectangulo1 = new Rectangle();
+        Rectangulo rectangulo1 = new Rectangulo();
         System.out.println("Rectángulo 1");
-        System.out.println("área: " + rectangulo1.computeArea() + ", height = " + rectangulo1.getHeight());
-        rectangulo1.setHeight(2.54);
-        rectangulo1.setWidth(2);
-        System.out.println("área: " + rectangulo1.computeArea() + ", height = " + rectangulo1.getHeight());
+        System.out.println("área: " + rectangulo1.calcularArea()+ ", height = " + rectangulo1.getAlto());
+        rectangulo1.setAlto(2.54);
+        rectangulo1.setAncho(2);
+        System.out.println("área: " + rectangulo1.calcularArea()+ ", height = " + rectangulo1.getAlto());
         
         
-        Rectangle rectangulo2 = new Rectangle(2, 3);
+        Rectangulo rectangulo2 = new Rectangulo(2, 3);
         System.out.println("\nRectángulo 2");
-        System.out.printf("Area: %f, perímetro: %f %n", rectangulo2.computeArea(), rectangulo2.computePerimeter());
+        System.out.printf("Area: %f, perímetro: %f %n", rectangulo2.calcularArea());
         
-        //Circle c1 = new Circle(5.25);
-        //ystem.out.printf("Area: %f, perímetro: %f %n", c1.computeArea(), c1.computePerimeter());
+        //Circulo c1 = new Circulo(5.25);
+        //System.out.printf("Area: %f, perímetro: %f %n", c1.computeArea(), c1.computePerimeter());
         
     }
     

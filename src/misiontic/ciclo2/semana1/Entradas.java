@@ -1,6 +1,7 @@
 package misiontic.ciclo2.semana1;
 
 import java.util.Scanner;
+//import java.util.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

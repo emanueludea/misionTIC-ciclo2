@@ -18,7 +18,7 @@ public class Matrices {
          nombre = new TIPO[TAM1][TAM2]...[TAMn];
         */
         String matriz2[][] = new String[2][2];
-        int matriz1[][] = {{1,2},{3, 4},{5, 6}};
+        int matriz1[][] = {{1,2},{3, 4},{5, 6}}; //[3][2]
         
         System.out.println("Matriz de String");
         for(int i = 0; i < matriz2.length; i++){
