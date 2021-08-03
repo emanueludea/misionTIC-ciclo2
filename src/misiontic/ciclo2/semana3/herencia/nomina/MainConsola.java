@@ -1,15 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package misiontic.ciclo2.semana3.herencia.nomina;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ * Una compañía desea escribir una aplicación que realice sus cálculos de nómina.
+ * 
+ * La compañía paga semanalmente a sus empleados, quienes se dividen en cuatro tipos: 
+ *  - empleados asalariados que reciben un salario semanal fijo, sin importar el número de horas trabajadas; 
+ *  - empleados por horas, que perciben un sueldo por hora y pago por tiempo extra (es decir, 1.5 veces 
+ * la tarifa de su salario por horas), por todas las horas trabajadas que excedan a 40 horas; 
+ *  - empleados por comisión, que perciben un porcentaje de sus ventas, y 
+ *  - empleados asalariados por comisión, que obtienen un salario base más un porcentaje de sus ventas. 
+ * Para este periodo de pago, la compañía ha decidido recompensar a los empleados asalariados por comisión, agregando un 10% a 
+ * sus salarios base. 
+ * 
  * @author emanuel
  */
 public class MainConsola {
