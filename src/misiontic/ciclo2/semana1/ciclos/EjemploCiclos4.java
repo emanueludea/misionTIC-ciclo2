@@ -14,6 +14,7 @@ public class EjemploCiclos4 {
 
     public static void main(String[] args) {
         System.out.println("Ejemplo1");
+        int a = 3;
         for (int i = 0, j = 20; i < 10; i++, j--){
             System.out.printf("i = %d, j = %d %n", i, j);
         }

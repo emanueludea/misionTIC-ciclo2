@@ -11,7 +11,8 @@ package misiontic.ciclo2.semana1.arreglos;
  */
 public class Matrices {
     public static void main(String[] args){
-        /* TIPO nombre[][]...[] = new TIPO[TAM1][TAM2]...[TAMn];
+        /* 
+         TIPO nombre[][]...[] = new TIPO[TAM1][TAM2]...[TAMn];
          TIPO[][]...[] nombre = new TIPO[TAM1][TAM2]...[TAMn];
          TIPO[][]...[] nombre;
          nombre = {valores iniciales}

@@ -5,8 +5,8 @@
  */
 package misiontic.ciclo2;
 
-import misiontic.ciclo2.semana2.herencia.Circulo;
-import misiontic.ciclo2.semana2.herencia.Rectangulo;
+import misiontic.ciclo2.semana3.herencia.figuras.Circulo;
+import misiontic.ciclo2.semana3.herencia.figuras.Rectangulo;
 
 /**
  *

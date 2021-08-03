@@ -20,7 +20,13 @@ public class PruebaClase1 {
         //System.out.println("" + c1.getCantidad());
         System.out.println("" + Clase1.numStatic);
         System.out.println("" + c1.numStatic);
-        Clase1 c2 = new Clase1();
+        Clase1 c2 = new Clase1(c1);
+        System.out.println("c1: " + c1.getCantidad() + " "+ c1.getNombre());
+        System.out.println("c2: " + c2.getCantidad() + " "+ c2.getNombre());
+        c2.setNombre("Camilo");
+        System.out.println("c1: " + c1.getCantidad() + " "+ c1.getNombre());
+        System.out.println("c2: " + c2.getCantidad() + " "+ c2.getNombre());
+        /*Clase1 c2 = new Clase1();
         System.out.println("Clase1.numStatic: " + Clase1.numStatic);
         System.out.println("c2.numStatic: " + c2.numStatic);
         
@@ -28,6 +34,7 @@ public class PruebaClase1 {
         Clase1 c3 = new Clase1(56, "Emanuel");
         System.out.println("c3.numStatic: "  + c3.numStatic);
         System.out.println("c3: "+ c3.getCantidad() + c3.getNombre());
-        System.out.println("c2: "+ c2.getCantidad() + c2.getNombre());
+        System.out.println("c2: "+ c2.getCantidad() + c2.getNombre());*/
+        
     }
 }
