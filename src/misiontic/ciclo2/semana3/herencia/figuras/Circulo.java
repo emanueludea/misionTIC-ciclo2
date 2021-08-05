@@ -9,7 +9,7 @@ package misiontic.ciclo2.semana3.herencia.figuras;
  *
  * @author emanuel
  */
-public class Circulo{
+public class Circulo extends Figura{
     // Atributo
     private double radio;
 
@@ -23,9 +23,14 @@ public class Circulo{
 
     // Metodos
 
-    /*@Override
+    @Override
     public double calcularArea() {
         return Math.PI * Math.pow(radio, 2);
-    }*/
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * Math.PI * radio;
+    }
     
 }

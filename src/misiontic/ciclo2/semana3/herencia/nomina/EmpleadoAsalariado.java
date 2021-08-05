@@ -13,8 +13,7 @@ public class EmpleadoAsalariado extends Empleado{
 
     private double salarioBase;
 
-    public EmpleadoAsalariado(){
-        
+    public EmpleadoAsalariado(){        
     }
     
     public EmpleadoAsalariado(String nombre, String documento, double salarioBase) {
@@ -41,3 +40,4 @@ public class EmpleadoAsalariado extends Empleado{
     }
     
 }
+// new Fan(25, 50, true, "gris");

@@ -44,7 +44,7 @@ public class MainConsola {
                     System.out.println("\n****************************");
                     for (Empleado empleado : empleados) {
                         System.out.println(empleado);
-                        System.out.printf("Valor a pagar: $%,2f%n", empleado.calcularSalario());
+                        System.out.printf("Valor a pagar: $%,.2f%n", empleado.calcularSalario());
                     }
                     System.out.println("****************************\n");
                     break;
@@ -56,6 +56,12 @@ public class MainConsola {
         } while (n != 3);
     }
 
+    /*
+    L = [4,3,6,7,84,34]
+    
+    for n in L:
+      
+    */
     private static void crearEmpleado() {
         System.out.println("\n\nIngrese el nombre");
         String nombre = scan.nextLine();
@@ -64,7 +70,7 @@ public class MainConsola {
 
         switch (elegirTipoEmpleado()) {
             case 1:
-                System.out.println("Ingrese el salario base");
+                System.out.println("Ingrese el salario base:");
                 double salarioBase = scan.nextDouble();
                 empleados.add(new EmpleadoAsalariado(nombre, documento, salarioBase));
                 break;

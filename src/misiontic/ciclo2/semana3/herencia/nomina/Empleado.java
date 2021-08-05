@@ -9,10 +9,9 @@ package misiontic.ciclo2.semana3.herencia.nomina;
  *
  * @author emanuel
  */
-public abstract class Empleado {
+public abstract class Empleado extends Object{
     private String nombre;
     private String codigo;
-    private double salarioBase;
 
     public Empleado(){
         
