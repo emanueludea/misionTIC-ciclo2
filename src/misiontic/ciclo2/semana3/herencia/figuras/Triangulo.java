@@ -28,6 +28,7 @@ public class Triangulo extends Figura {
     public double calcularArea() {
         double semiP = (this.lado1 + this.lado2 + this.lado3) / 2;
         // Aplicar formula de Herón (https://www.neurochispas.com/wiki/area-de-un-triangulo-escaleno/)
+        // https://www.mathsisfun.com/geometry/herons-formula.html
         return Math.sqrt(semiP * (semiP - lado1) * (semiP - lado2) * (semiP - lado3));
     }
     

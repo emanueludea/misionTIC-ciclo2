@@ -49,7 +49,7 @@ public class ManualFiguraFrame extends JFrame {
         contentPane.add(medidasContainer);
         contentPane.add(btnCalcular);
         
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
     }
@@ -57,7 +57,7 @@ public class ManualFiguraFrame extends JFrame {
     private void calcularMedidas(){
         medidasContainer.setAreaValue(figuraContainer.getArea());
         medidasContainer.setPerimetroValue(figuraContainer.getPerimetro());
-        figuraContainer = new CirculoPanel();
+        //figuraContainer = new CirculoPanel();
         contentPane.remove(0);
         contentPane.add(figuraContainer, 0);
         contentPane.revalidate();
