@@ -74,14 +74,14 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Radio:"/>
+            <Property name="text" type="java.lang.String" value="NOmbre"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textRadio">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Area:"/>
+            <Property name="text" type="java.lang.String" value="Codigo"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textArea">

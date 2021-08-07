@@ -50,11 +50,11 @@ public class FrameCirculo extends javax.swing.JFrame {
 
         panelPrincipal.setLayout(new java.awt.GridLayout(4, 2));
 
-        jLabel1.setText("Radio:");
+        jLabel1.setText("NOmbre");
         panelPrincipal.add(jLabel1);
         panelPrincipal.add(textRadio);
 
-        jLabel2.setText("Area:");
+        jLabel2.setText("Codigo");
         panelPrincipal.add(jLabel2);
         panelPrincipal.add(textArea);
 
