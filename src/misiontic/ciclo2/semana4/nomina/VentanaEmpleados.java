@@ -73,7 +73,9 @@ public class VentanaEmpleados extends JFrame {
         panelPrincipal.add(panelEmpleado, BorderLayout.NORTH);
         panelPrincipal.add(panelTotal, BorderLayout.CENTER);
         panelPrincipal.add(btnCancelar, BorderLayout.SOUTH);
-
+        
+        panelEmpleado.setVisible(false);
+        
         setContentPane(panelPrincipal);
 
         barraMenu = new JMenuBar();

@@ -5,8 +5,6 @@
  */
 package misiontic.ciclo2.semana4.nomina;
 
-import misiontic.ciclo2.semana3.herencia.nomina.EmpleadoAsalariado;
-
 /**
  *
  * @author emanuel
@@ -29,76 +27,15 @@ public class VentanaNomina extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        labelNombre = new javax.swing.JLabel();
-        textNombre = new javax.swing.JTextField();
-        labelCodigo = new javax.swing.JLabel();
-        textCodigo = new javax.swing.JTextField();
-        labelTotal1 = new javax.swing.JLabel();
-        textSalarioBase = new javax.swing.JTextField();
-        labelTotal = new javax.swing.JLabel();
-        textTotal = new javax.swing.JTextField();
-        btnCalcular = new javax.swing.JButton();
-        jPanel2 = new PanelEmpleado();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        panelAsalariado1 = new misiontic.ciclo2.semana4.nomina.PanelAsalariado();
+        panelPorHoras1 = new misiontic.ciclo2.semana4.nomina.PanelPorHoras();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout(5, 2));
-
-        labelNombre.setText("Nombre:");
-        jPanel1.add(labelNombre);
-        jPanel1.add(textNombre);
-
-        labelCodigo.setText("Codigo:");
-        jPanel1.add(labelCodigo);
-        jPanel1.add(textCodigo);
-
-        labelTotal1.setText("Salario base:");
-        jPanel1.add(labelTotal1);
-        jPanel1.add(textSalarioBase);
-
-        labelTotal.setText("Total a pagar:");
-        jPanel1.add(labelTotal);
-        jPanel1.add(textTotal);
-
-        btnCalcular.setText("Calcular");
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCalcular);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jMenu1.setText("File");
-
-        jMenu3.setText("jMenu3");
-        jMenu1.add(jMenu3);
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
-        jMenu1.add(jCheckBoxMenuItem1);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
@@ -111,32 +48,25 @@ public class VentanaNomina extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))))
+                .addContainerGap()
+                .addComponent(panelAsalariado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelPorHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelAsalariado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(panelPorHoras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-        String salarioBase = textSalarioBase.getText();
-        textTotal.setText(salarioBase);
-    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,22 +104,10 @@ public class VentanaNomina extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalcular;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel labelCodigo;
-    private javax.swing.JLabel labelNombre;
-    private javax.swing.JLabel labelTotal;
-    private javax.swing.JLabel labelTotal1;
-    private javax.swing.JTextField textCodigo;
-    private javax.swing.JTextField textNombre;
-    private javax.swing.JTextField textSalarioBase;
-    private javax.swing.JTextField textTotal;
+    private misiontic.ciclo2.semana4.nomina.PanelAsalariado panelAsalariado1;
+    private misiontic.ciclo2.semana4.nomina.PanelPorHoras panelPorHoras1;
     // End of variables declaration//GEN-END:variables
 }

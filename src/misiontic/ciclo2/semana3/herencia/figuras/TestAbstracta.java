@@ -15,7 +15,7 @@ public class TestAbstracta {
         
         Cuadrado c1 = new Cuadrado();
         Cuadrado c2 = new Cuadrado(2);
-        c1.mostrarAtributos();
+       // c1.mostrarAtributos();
         System.out.println(""+ c1.compareTo(c2));
         // f1 = new Figura(); //No puedo crear un objeto de la clase abstracta
     }

@@ -11,7 +11,7 @@ import misiontic.ciclo2.semana3.interfaces.Miembros;
  *
  * @author emanuel
  */
-public class Rectangulo extends Figura  implements Miembros{
+public class Rectangulo extends Figura{
 
     //Atributos
     private double ancho;
@@ -57,7 +57,7 @@ public class Rectangulo extends Figura  implements Miembros{
         return "ancho = " + this.ancho + ", alto = " + this.alto;
     }
     
-    @Override
+   /*@Override
     public void mostrarAtributos() {
         System.out.println("mostrarAtributos");
     }
@@ -65,6 +65,10 @@ public class Rectangulo extends Figura  implements Miembros{
     @Override
     public void mostrarMetodos() {
         System.out.println("mostrarMetodos");
+    }*/
+    
+    public boolean isCuadrado(){
+        return alto == ancho;
     }
 
 }
