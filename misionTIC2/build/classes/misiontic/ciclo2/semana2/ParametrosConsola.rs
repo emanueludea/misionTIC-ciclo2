@@ -1,0 +1,2 @@
+misiontic.ciclo2.semana2.ParametrosConsola
+misiontic.ciclo2.semana2.TestStatic
