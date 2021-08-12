@@ -49,7 +49,7 @@ public class Deportista {
     }
 
     public void entrenar() {
-
+       this.cantidadEntrenamientos++;
     }
 
     // Métodos getter y setter

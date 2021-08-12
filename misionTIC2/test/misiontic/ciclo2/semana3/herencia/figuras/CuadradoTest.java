@@ -44,8 +44,9 @@ public class CuadradoTest {
     public static void tearDownClass() {
     }
     
-    @Before  //@BeforeEach en JUnit 5
+    @Before  // @BeforeEach en JUnit 5
     public void setUp() {
+        
     }
     
     @After
