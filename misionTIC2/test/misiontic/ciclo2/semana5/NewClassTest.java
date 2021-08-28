@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
+import org.junit.Ignore;
 
 /**
  *
@@ -28,7 +29,7 @@ public class NewClassTest {
         
     }
     
-    @BeforeClass
+    @BeforeClass // @BeforeAll
     public static void setUpClass() {
         // Se ejecuta 1 sola vez, antes de todo
         System.out.println("setUpClass");
@@ -58,6 +59,7 @@ public class NewClassTest {
      * Test of getUno method, of class NewClass.
      */
     @Test
+    @Ignore // @Disabled
     public void testGetUno() {
         System.out.println("getUno");
         int expResult = 0;

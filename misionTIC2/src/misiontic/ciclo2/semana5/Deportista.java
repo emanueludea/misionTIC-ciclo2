@@ -25,31 +25,36 @@ public class Deportista {
 
     // Métodos adicionales
     public void cumplirAnios() {
-
+        this.edad++;
     }
 
     public void competir() {
-        if (lesionado) {
-            return;
-        }
-        //if (!lesionado) {
-        cantidadCompetencias += 1;
-        double propabilidadDeLesion = 0.0;
-        if (cantidadEntrenamientos == 0) {
-            propabilidadDeLesion += 0.3;
-        }
-        if (cantidadCompetencias > 3) {
-            propabilidadDeLesion += 0.05 * (cantidadCompetencias - 3);
-        }
-
-        if (propabilidadDeLesion > 0.7) {
-            propabilidadDeLesion = 0.7;
-        }
-        //}
+        if(this.lesionado == true) return;
+        if(this.edad >= 42) return;
+        this.cantidadCompetencias ++;
     }
 
     public void entrenar() {
        this.cantidadEntrenamientos++;
+    }
+    
+    public double obtenerProbabilidadDeLesion(){
+        double probabilidad = 0.0;
+        if(this.cantidadEntrenamientos == 0){
+            probabilidad += 0.3;
+        }
+        if(this.cantidadCompetencias > 3){
+            probabilidad += ((cantidadCompetencias-3)*0.05);
+        }
+        
+        probabilidad -= (this.cantidadEntrenamientos*0.03);
+        if(probabilidad < 0){
+            probabilidad = 0.0;
+        }
+        if(probabilidad > 1){
+            probabilidad = 1;
+        }
+        return probabilidad;
     }
 
     // Métodos getter y setter

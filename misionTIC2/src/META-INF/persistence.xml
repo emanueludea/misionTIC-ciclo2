@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="misionTIC-ciclo2-clasesPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>misiontic.ciclo2.semana6.bdclases.Rental</class>
+    <class>misiontic.ciclo2.semana6.bdclases.ActorInfo</class>
+    <class>misiontic.ciclo2.semana6.bdclases.City</class>
+    <class>misiontic.ciclo2.semana6.bdclases.CustomerList</class>
+    <class>misiontic.ciclo2.semana6.bdclases.NicerButSlowerFilmList</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Film</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Customer</class>
+    <class>misiontic.ciclo2.semana6.bdclases.FilmList</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Store</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Category</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Inventory</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Actor</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Staff</class>
+    <class>misiontic.ciclo2.semana6.bdclases.SalesByStore</class>
+    <class>misiontic.ciclo2.semana6.bdclases.FilmText</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Payment</class>
+    <class>misiontic.ciclo2.semana6.bdclases.FilmActor</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Country</class>
+    <class>misiontic.ciclo2.semana6.bdclases.FilmCategory</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Address</class>
+    <class>misiontic.ciclo2.semana6.bdclases.Language</class>
+    <class>misiontic.ciclo2.semana6.bdclases.SalesByFilmCategory</class>
+    <class>misiontic.ciclo2.semana6.bdclases.StaffList</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sakila?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="misiontic"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="misionTIC2021"/>
+    </properties>
+  </persistence-unit>
+</persistence>
