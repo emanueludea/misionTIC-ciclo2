@@ -5,44 +5,31 @@
  */
 package misiontic.ciclo2.semana7.universidad.mvc.modelo;
 
-import misiontic.ciclo2.semana7.universidad.mvc.modelo.alumno.Alumno;
-import misiontic.ciclo2.semana7.universidad.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author emanuel
  */
 public class ConexionBD {
+    private final String URL = "jdbc:mysql://localhost/universidad";
+    private final String USUARIO = "universidad";
+    private final String CLAVE = "Universidad2021";
+    
+    Connection connection;
 
-    private final String url = "jdbc:mysql://localhost/universidad";
-    private final String usuarioBd = "universidad";
-    private final String claveBd = "Universidad2021";
-
-    public Connection crearConnection() throws SQLException {
-        Connection connection = null;
-        try {
-            // Load the JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("Driver loaded");
-            // Connect to a database
-            connection = DriverManager.getConnection(url, usuarioBd, claveBd);
-            System.out.println("Database connected");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
-            throw ex;
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public Connection getConnection() {
         return connection;
     }
 
+    public void conectar() throws ClassNotFoundException, SQLException {        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = DriverManager.getConnection(URL, USUARIO, CLAVE);
+    }
+    
+    public void cerrarConexion() throws SQLException{
+        this.connection.close();
+    }
 }

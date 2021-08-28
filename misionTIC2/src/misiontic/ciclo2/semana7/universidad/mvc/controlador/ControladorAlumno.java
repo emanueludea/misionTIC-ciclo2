@@ -11,11 +11,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import misiontic.ciclo2.semana7.universidad.mvc.modelo.alumno.Alumno;
-import misiontic.ciclo2.semana7.universidad.mvc.modelo.alumno.ConsultasBdAlumno;
-import misiontic.ciclo2.semana7.universidad.mvc.vista.gui.PanelBotones;
+import misiontic.ciclo2.semana7.universidad.mvc.modelo.alumno.ConsultasAlumno;
 import misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.FrameAlumno;
-import misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelAlumno;
 
 /**
  *
@@ -23,73 +22,162 @@ import misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelAlumno;
  */
 public class ControladorAlumno implements ActionListener, KeyListener {
 
-    // modelo;
-    ConsultasBdAlumno alumno;
-    FrameAlumno vista;
+    private ConsultasAlumno modelo;
+    private FrameAlumno vista;
 
-    public ControladorAlumno(ConsultasBdAlumno alumno, FrameAlumno vista) {
-        this.alumno = alumno;
+    public ControladorAlumno(ConsultasAlumno modelo, FrameAlumno vista) {
+        this.modelo = modelo;
         this.vista = vista;
 
-        this.vista.panelBotones.getBtnListar().addActionListener(this);
-        this.vista.panelBotones.getBtnCrear().addActionListener(this);
-        this.vista.panelBotones.getBtnActualizar().addActionListener(this);
-        this.vista.panelBotones.getBtnEliminar().addActionListener(this);
-        
-        this.vista.panelAlumno.getTextCedula().addKeyListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnBuscar().addActionListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnCrear().addActionListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnLimpiar().addActionListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnActualizar().addActionListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnEliminar().addActionListener(this);
+        this.vista.getPanelBotonesAlumno().getBtnListar().addActionListener(this);
+
+        this.vista.getPanelAlumno().getTextCedula().addKeyListener(this);
+        this.vista.getPanelAlumno().getTextEdad().addKeyListener(this);
+        this.vista.getPanelAlumno().getTextSemestre().addKeyListener(this);
     }
 
-    public void inicializarVista() {
-        this.vista.setTitle("Gestión de alumnos");
+    public void mostrarGUI() {
+        this.vista.setTitle("Alumno con MVC");
+        this.vista.getjScrollPane1().setVisible(false);
         this.vista.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        PanelBotones pb = this.vista.panelBotones;
-        if (e.getSource() == pb.getBtnListar()) {
-            this.listarAlumnos();
-        } else if (e.getSource() == pb.getBtnCrear()) {
-            System.out.println("Quiero crear");
-        } else if (e.getSource() == pb.getBtnActualizar()) {
-            System.out.println("Quiero actualizar");
-        } else if (e.getSource() == pb.getBtnEliminar()) {
-            System.out.println("Quiero eliminar");
-        }        
-    }
-    
-    private void listarAlumnos() {
-        System.out.println("Quiero listar");
-        ArrayList<Alumno> listaAlumnos = this.alumno.listarAlumnos();
-        if (listaAlumnos == null) {
-            return;
+        if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnBuscar()) {
+            this.manejaBtnBuscar();
+        } else if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnCrear()) {
+            this.manejaBtnCrear();
+        } else if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnActualizar()) {
+            this.manejaBtnActualizar();
+        } else if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnEliminar()) {
+            this.manejaBtnEliminar();
+        } else if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnListar()) {
+            this.manejaListar();
+        } else if (e.getSource() == this.vista.getPanelBotonesAlumno().getBtnLimpiar()) {
+            this.manejaBtnLimpiar();
         }
-        for (Alumno al : listaAlumnos) {
-            System.out.println(al);
+
+    }
+
+    private void manejaListar() {
+        ArrayList<Alumno> listaAlumnos = modelo.listarAlumnos();
+        for (Alumno alumno : listaAlumnos) {
+            System.out.println(alumno);
+        }
+        if(listaAlumnos.size() > 0){
+            this.vista.getjScrollPane1().setVisible(true);
+            this.mostrarAlumnoVista(listaAlumnos.get(0));
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {        
-        PanelAlumno pa = this.vista.panelAlumno;
-        if(e.getSource() == pa.getTextCedula()){
-            if(e.getKeyChar()< '0' || e.getKeyChar() > '9' || pa.getTextCedula().getText().length() >= 3){
-                pa.getTextCedula().setBackground(Color.red);
-                e.consume();
-            }else{
-                pa.getTextCedula().setBackground(Color.WHITE);
+    private void manejaBtnEliminar() {
+        String textCedula = this.vista.getPanelAlumno().getTextCedula().getText();
+        if (textCedula.isEmpty()) {
+            this.vista.getPanelAlumno().getTextCedula().setBackground(Color.red);
+            return;
+        }
+        int cedula = Integer.parseInt(textCedula);
+        this.modelo.EliminarAlumno(cedula);
+        this.vista.getPanelAlumno().limpiar();
+
+    }
+
+    private void manejaBtnActualizar() {
+        this.modelo.ActualizarAlumno(crearAlumno());
+        this.vista.getPanelAlumno().limpiar();
+    }
+
+    private void manejaBtnBuscar() {
+        System.out.println("Le dimos a buscar");
+        String textCedula = this.vista.getPanelAlumno().getTextCedula().getText();
+        if (textCedula.isEmpty()) {
+            this.vista.getPanelAlumno().getTextCedula().setBackground(Color.red);
+            return;
+        }
+
+        try {
+            int cedula = Integer.parseInt(textCedula);
+            Alumno alumno = this.modelo.buscarAlumno(cedula);
+            if (alumno != null) {
+                mostrarAlumnoVista(alumno);
+            } else {
+                JOptionPane.showConfirmDialog(vista, "No hay un alumno con esa cédula");
             }
+        } catch (NumberFormatException nEx) {
+            JOptionPane.showConfirmDialog(vista, "No es una cédula válida");
+            return;
+        }
+    }
+
+    private void manejaBtnCrear() {
+        System.out.println("Quieren crear un alumno");
+
+        this.modelo.CrearAlumno(crearAlumno());
+        this.vista.getPanelAlumno().limpiar();
+
+    }
+
+    private void manejaBtnLimpiar() {
+        this.vista.getPanelAlumno().limpiar();
+    }
+
+    private void mostrarAlumnoVista(Alumno alumno) {
+        this.vista.getPanelAlumno().getTextCedula().setText("" + alumno.getCedula());
+        this.vista.getPanelAlumno().getTextPrimerNombre().setText(alumno.getPrimerNombre());
+        this.vista.getPanelAlumno().getTextSegundoNombre().setText(alumno.getSegundoNombre());
+        this.vista.getPanelAlumno().getTextPrimerApellido().setText(alumno.getPrimerApellido());
+        this.vista.getPanelAlumno().getTextSegundoApellido().setText(alumno.getSegundoApellido());
+        this.vista.getPanelAlumno().getTextEdad().setText("" + alumno.getEdad());
+        this.vista.getPanelAlumno().getTextSemestre().setText("" + alumno.getSemestre());
+    }
+
+    private Alumno crearAlumno() {
+        Alumno alumno = new Alumno();
+
+        String textCedula = this.vista.getPanelAlumno().getTextCedula().getText();
+        int cedula = Integer.parseInt(textCedula);
+        alumno.setCedula(cedula);
+
+        alumno.setPrimerNombre(this.vista.getPanelAlumno().getTextPrimerNombre().getText());
+        alumno.setSegundoNombre(this.vista.getPanelAlumno().getTextSegundoNombre().getText());
+
+        alumno.setPrimerApellido(this.vista.getPanelAlumno().getTextPrimerApellido().getText());
+        alumno.setSegundoApellido(this.vista.getPanelAlumno().getTextSegundoApellido().getText());
+
+        String textEdad = this.vista.getPanelAlumno().getTextEdad().getText();
+        int edad = Integer.parseInt(textEdad);
+        alumno.setEdad(edad);
+
+        String textSemestre = this.vista.getPanelAlumno().getTextSemestre().getText();
+        int semestre = Integer.parseInt(textSemestre);
+        alumno.setSemestre(semestre);
+        return alumno;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("se está escribien en el campo de cedula");
+        if (e.getKeyChar() > '9' || e.getKeyChar() < '0') {
+            System.out.println("No es valido");
+            // this.vista.getPanelAlumno().getTextCedula().setBackground(Color.red);
+            e.consume();
+        } else {
+            // this.vista.getPanelAlumno().getTextCedula().setBackground(Color.white);
         }
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        
     }
 
 }

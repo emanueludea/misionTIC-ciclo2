@@ -11,38 +11,20 @@ package misiontic.ciclo2.semana7.universidad.mvc.modelo.alumno;
  */
 public class Alumno {
 
+    private int cedula;
     private String primerNombre;
     private String segundoNombre;
     private String primerApellido;
     private String segundoApellido;
-    private int cedula;
     private int edad;
     private int semestre;
 
-    public Alumno() {
+    public int getCedula() {
+        return cedula;
     }
 
-    public Alumno(String primerNombre, String primerApellido, int cedula) {
-        this.primerNombre = primerNombre;
-        this.primerApellido = primerApellido;
+    public void setCedula(int cedula) {
         this.cedula = cedula;
-    }
-
-    public Alumno(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, int cedula, int edad, int semestre) {
-        this.primerNombre = primerNombre;
-        this.segundoNombre = segundoNombre;
-        this.primerApellido = primerApellido;
-        this.segundoApellido = segundoApellido;
-        this.cedula = cedula;
-        this.edad = edad;
-        this.semestre = semestre;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("\tcédula = %d%n\tprimer nombre = %s%n\tsegundo nombre = %s%n"
-                + "\tprimer apellido = %s%n\tsegundo apellido = %s%n\tedad = %d%n\tsemestre = %d%n",
-                cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, edad, semestre);
     }
 
     public String getPrimerNombre() {
@@ -77,14 +59,6 @@ public class Alumno {
         this.segundoApellido = segundoApellido;
     }
 
-    public int getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -101,4 +75,22 @@ public class Alumno {
         this.semestre = semestre;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "Cédula: %d%n"
+                + "Primer nombre: %s%n"
+                + "Segundo nombre: %s%n"
+                + "Primer apellido: %s%n"
+                + "Segundo apellido: %s%n"
+                + "Edad: %d%n"
+                + "Semestre: %d%n",
+                this.cedula,
+                this.primerNombre,
+                this.segundoNombre,
+                this.primerApellido,
+                this.segundoApellido,
+                this.edad,
+                this.semestre);
+    }
 }

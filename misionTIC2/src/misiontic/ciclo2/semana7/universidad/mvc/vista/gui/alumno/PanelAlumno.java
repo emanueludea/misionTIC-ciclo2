@@ -20,14 +20,15 @@ public class PanelAlumno extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void limpiarPantalla(){
-        textCedula.setText("");
-        textPrimerNombre.setText("");
-        textSegundoNombre.setText("");
-        textPrimerApellido.setText("");
-        textSegundoApellido.setText("");
-        textEdad.setText("");
-        textSemestre.setText("");
+    public void limpiar() {
+        System.out.println("Vamos a limpiar");
+        this.textCedula.setText("");
+        this.textPrimerNombre.setText("");
+        this.textSegundoNombre.setText("");
+        this.textPrimerApellido.setText("");
+        this.textSegundoApellido.setText("");
+        this.textEdad.setText("");
+        this.textSemestre.setText("");
     }
 
     public JTextField getTextCedula() {
@@ -57,7 +58,7 @@ public class PanelAlumno extends javax.swing.JPanel {
     public JTextField getTextSemestre() {
         return textSemestre;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,15 +68,15 @@ public class PanelAlumno extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
-        textCedula = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        textPrimerNombre = new javax.swing.JTextField();
+        textCedula = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        textSegundoNombre = new javax.swing.JTextField();
+        textPrimerNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        textPrimerApellido = new javax.swing.JTextField();
+        textSegundoNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        textPrimerApellido = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         textSegundoApellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         textEdad = new javax.swing.JTextField();
@@ -84,24 +85,24 @@ public class PanelAlumno extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridLayout(7, 2));
 
-        jLabel5.setText("Cedula");
-        add(jLabel5);
+        jLabel1.setText("Cedula");
+        add(jLabel1);
         add(textCedula);
 
-        jLabel1.setText("Primer nombre");
-        add(jLabel1);
+        jLabel2.setText("Primer nombre");
+        add(jLabel2);
         add(textPrimerNombre);
 
-        jLabel2.setText("Segundo nombre");
-        add(jLabel2);
+        jLabel3.setText("Segundo nombre");
+        add(jLabel3);
         add(textSegundoNombre);
 
-        jLabel3.setText("Primer apellido");
-        add(jLabel3);
+        jLabel4.setText("Primer apellido");
+        add(jLabel4);
         add(textPrimerApellido);
 
-        jLabel4.setText("Segundo apellido");
-        add(jLabel4);
+        jLabel5.setText("Segundo apellido");
+        add(jLabel5);
         add(textSegundoApellido);
 
         jLabel6.setText("Edad");
@@ -122,12 +123,12 @@ public class PanelAlumno extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    javax.swing.JTextField textCedula;
-    javax.swing.JTextField textEdad;
-    javax.swing.JTextField textPrimerApellido;
-    javax.swing.JTextField textPrimerNombre;
-    javax.swing.JTextField textSegundoApellido;
-    javax.swing.JTextField textSegundoNombre;
-    javax.swing.JTextField textSemestre;
+    public javax.swing.JTextField textCedula;
+    private javax.swing.JTextField textEdad;
+    private javax.swing.JTextField textPrimerApellido;
+    private javax.swing.JTextField textPrimerNombre;
+    private javax.swing.JTextField textSegundoApellido;
+    private javax.swing.JTextField textSegundoNombre;
+    private javax.swing.JTextField textSemestre;
     // End of variables declaration//GEN-END:variables
 }

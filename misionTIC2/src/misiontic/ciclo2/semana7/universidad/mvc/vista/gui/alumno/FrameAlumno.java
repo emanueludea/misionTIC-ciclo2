@@ -5,7 +5,8 @@
  */
 package misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno;
 
-import misiontic.ciclo2.semana7.universidad.mvc.vista.gui.PanelBotones;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -20,6 +21,23 @@ public class FrameAlumno extends javax.swing.JFrame {
         initComponents();
     }
 
+    public PanelAlumno getPanelAlumno() {
+        return panelAlumno;
+    }
+
+    public PanelBotonesAlumno getPanelBotonesAlumno() {
+        return panelBotonesAlumno;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,11 +48,28 @@ public class FrameAlumno extends javax.swing.JFrame {
     private void initComponents() {
 
         panelAlumno = new misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelAlumno();
-        panelBotones = new misiontic.ciclo2.semana7.universidad.mvc.vista.gui.PanelBotones();
+        panelBotonesAlumno = new misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelBotonesAlumno();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().add(panelAlumno, java.awt.BorderLayout.CENTER);
-        getContentPane().add(panelBotones, java.awt.BorderLayout.PAGE_END);
+        getContentPane().add(panelBotonesAlumno, java.awt.BorderLayout.PAGE_END);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.LINE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,7 +110,9 @@ public class FrameAlumno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelAlumno panelAlumno;
-    public misiontic.ciclo2.semana7.universidad.mvc.vista.gui.PanelBotones panelBotones;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelAlumno panelAlumno;
+    private misiontic.ciclo2.semana7.universidad.mvc.vista.gui.alumno.PanelBotonesAlumno panelBotonesAlumno;
     // End of variables declaration//GEN-END:variables
 }
